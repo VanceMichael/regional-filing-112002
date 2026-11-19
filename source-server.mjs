@@ -84,7 +84,7 @@ if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) 
   let portal;
   if (index.portal) {
     const { makePortal } = await import('./portal.mjs');
-    portal = makePortal();
+    portal = makePortal(sendJson);
   }
   const app = await start({ ...options, portal });
   console.log(`来源服务 ${app.url}`);

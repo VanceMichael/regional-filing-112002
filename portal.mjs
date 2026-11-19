@@ -1,5 +1,3 @@
-import { sendJson } from './source-server.mjs';
-
 const shell = (content) => `<!doctype html><html lang="zh"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width"><title>联合登记 · 受理台</title>
 <style>body{font:16px system-ui;margin:2rem auto;padding:0 1rem;max-width:48rem;color:#1d292c}nav,fieldset,form{margin:1rem 0}label{display:block;margin:.75rem 0}input,select,button{font:inherit}fieldset{border:1px solid #a2b3b7}output{display:block;min-height:1.5rem}</style>
@@ -14,7 +12,7 @@ const form = shell(`<h1>联合登记受理</h1><form>
 <label>登记地区 <select name="region"><option>本地</option><option>跨区</option></select></label>
 <fieldset><legend>统一编号</legend>
 <label>主申请人 <select name="applicant" required>${options}</select></label>
-<label>素材权利人 <select name="holder" required>${options}</select></label>
+<label for="holder">素材权利人</label><select id="holder" name="holder" required>${options}</select>
 <label>跨区联络人 <select name="liaison">${options}</select></label></fieldset>
 <label>资料名称 <input name="title" required></label>
 <label>镜头数量 <input type="number" name="count" min="1" required></label>
@@ -49,7 +47,7 @@ form.addEventListener('submit', async (event) => {
 renderBranch();
 </script>`);
 
-export function makePortal() {
+export function makePortal(sendJson) {
   const submissions = new Map();
   return async (request, response, url, stage) => {
     if (!url.pathname.startsWith('/filing')) return false;
