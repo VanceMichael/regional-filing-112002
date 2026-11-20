@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node source-server.mjs",
-    "test": "node --test *.test.mjs"
+    "test": "node --test *.test.mjs agent/*.test.mjs",
+    "agent": "node agent/cli.mjs"
   },
   "dependencies": {
     "playwright": "1.56.1"
