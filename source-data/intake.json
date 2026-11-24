@@ -155,5 +155,66 @@
         }
       ]
     }
+  },
+  {
+    "record": "intake-4",
+    "availableFrom": 4,
+    "kind": "packet",
+    "payload": {
+      "case": "D-22",
+      "region": "跨区",
+      "fingerprint": "A-30",
+      "participants": [
+        [
+          "主申请人",
+          "ORG-03",
+          "远帆"
+        ],
+        [
+          "素材权利人",
+          "ORG-02",
+          "远帆"
+        ],
+        [
+          "跨区联络人",
+          "ORG-07",
+          "协作站"
+        ]
+      ],
+      "fields": {
+        "title": "馆藏镜头",
+        "count": 13,
+        "contact": "谷站（补正）"
+      },
+      "delegates": [
+        "title",
+        "count",
+        "contact"
+      ],
+      "signatures": [
+        {
+          "role": "素材权利人",
+          "org": "ORG-02",
+          "branch": "跨区-R2",
+          "fields": [
+            "title",
+            "count",
+            "contact"
+          ],
+          "fingerprint": "A-30"
+        },
+        {
+          "role": "跨区联络人",
+          "org": "ORG-07",
+          "branch": "跨区-R2",
+          "fields": [
+            "title",
+            "count",
+            "contact"
+          ],
+          "fingerprint": "A-30"
+        }
+      ]
+    }
   }
 ]
